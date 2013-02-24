@@ -56,7 +56,7 @@ my $hex = 0x20;
 my $big_num = 100_000_000_000_000_000;
 
 use Scalar::Util;
-use Test::More tests => 3;
+use Test::More tests => 4;
 ok Scalar::Util::looks_like_number $integer, 'right?';
 
 
@@ -118,3 +118,8 @@ for my $i (1 .. 10) {
 my $i = 3;
 for my $i (1 .. 5) {}
 is ($i, 3, 'outer $i scope is preserved');
+
+# for: in place operation
+my @values = 1 .. 5;
+$_ **= 2 for @values;
+is $values[4], 25, '= 5^2';
