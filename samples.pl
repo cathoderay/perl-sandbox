@@ -1,7 +1,6 @@
 #!/usr/bin/perl
 
 use Modern::Perl;
-use utf8;
 
 # a string
 my $name = 'Anakin';
