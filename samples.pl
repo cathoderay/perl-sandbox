@@ -77,18 +77,18 @@ my @alphabet = 'a' .. 'z';
 my @sequence = 0 .. 41;
 
 
-# a postfix if
+# if: postfix form
 say "go, $name!" if $name eq 'Anakin';
 
-# if block form
+# if: block form
 if ($vita eq 'bella') {
     say "Buongiorno, principessa!"
 }
 
-# postfix unless
+# unless: postfix form
 say "You're wrong!" unless 0 == 1;
 
-# unless block form
+# unless: block form
 unless (0) {
    say "0 is not true";
 }
@@ -106,17 +106,15 @@ foreach(1 .. 10) {
     say "$_ * $_ = ", $_ * $_;
 }
 
-# for postfix form
+# for: postfix form
 say "2 x $_ = ", 2 * $_ for 1 .. 10;
 
-# for block form
+# for: block form
 for my $i (1 .. 10) {
     say $i;
 }
 
 # for variable scope
 my $i = 3;
-
 for my $i (1 .. 5) {}
-
 is ($i, 3, 'outer $i scope is preserved');
