@@ -101,7 +101,7 @@ say 1 and 4 or 2;
 say 1 && 4 || 2;
 
 
-# looping
+# foreach
 foreach(1 .. 10) {
     say "$_ * $_ = ", $_ * $_;
 }
@@ -114,7 +114,7 @@ for my $i (1 .. 10) {
     say $i;
 }
 
-# for variable scope
+# for: variable scope
 my $i = 3;
 for my $i (1 .. 5) {}
 is ($i, 3, 'outer $i scope is preserved');
@@ -122,4 +122,13 @@ is ($i, 3, 'outer $i scope is preserved');
 # for: in place operation
 my @values = 1 .. 5;
 $_ **= 2 for @values;
-is $values[4], 25, '= 5^2';
+is $values[4], 25, '5^2 = 25';
+
+# for: aliasing to $_ to perform operations
+my $strange = "  4  st 2  r  an ge";
+for ($strange) {
+    s/\d//g && s/\s*//g;
+    say;
+}
+
+
