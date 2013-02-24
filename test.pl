@@ -15,7 +15,7 @@ diag("diag prints a message within test");
 like("know thyself", qr/thy/, "like = this is like that");
 unlike("know thyself", qr/knw/, "unlike = NOT like");
 
-cmp_ok("param1", "=", "param3", "cmp_ok = compare param1 with param3 using param2 as operator");
+cmp_ok("param1", 'eq', "param1", "cmp_ok = compare param1 with param3 using param2 as operator");
 
 my @foo = qw(foo bar);
 is_deeply(\@foo, \@foo, "is_deeply is used for complex datastructures comparisons");
