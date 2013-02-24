@@ -31,7 +31,7 @@ END
 print $other_hd;
 
 
-# default is to interpolate, 
+# default is to interpolate,
 # no need for double quotes
 my $another_hd =<<END;
 ---------------------------
@@ -57,7 +57,7 @@ my $hex = 0x20;
 my $big_num = 100_000_000_000_000_000;
 
 use Scalar::Util;
-use Test::More tests => 2;
+use Test::More tests => 3;
 ok Scalar::Util::looks_like_number $integer, 'right?';
 
 
@@ -94,3 +94,30 @@ unless (0) {
    say "0 is not true";
 }
 
+
+# 'and' and 'or' operators
+say 1 and 4 or 2;
+
+# '&&' and '||' operators
+say 1 && 4 || 2;
+
+
+# looping
+foreach(1 .. 10) {
+    say "$_ * $_ = ", $_ * $_;
+}
+
+# for postfix form
+say "2 x $_ = ", 2 * $_ for 1 .. 10;
+
+# for block form
+for my $i (1 .. 10) {
+    say $i;
+}
+
+# for variable scope
+my $i = 3;
+
+for my $i (1 .. 5) {}
+
+is ($i, 3, 'outer $i scope is preserved');
