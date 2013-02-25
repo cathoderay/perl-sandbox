@@ -136,3 +136,5 @@ for (my $even = 2; $even <= 10; $even += 2) {
     say $even;
 }
 
+# for: infinite loop
+for(;;) { last }
