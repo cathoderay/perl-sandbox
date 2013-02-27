@@ -139,8 +139,15 @@ for (my $even = 2; $even <= 10; $even += 2) {
 # for: infinite loop
 for(;;) { last }
 
+
 # while: over an array
 my @array = (1 .. 10);
 while(my $value = shift @array) {
     say $value;
 }
+
+# while: reading file
+open my $fh, '<', 'test.pl';
+while(<$fh>) { print $_; }
+
+
