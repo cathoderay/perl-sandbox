@@ -150,4 +150,6 @@ while(my $value = shift @array) {
 open my $fh, '<', 'test.pl';
 while(<$fh>) { print $_; }
 
+# while: simplest infinite loop
+# 1 while 1;
 
