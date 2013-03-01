@@ -153,3 +153,5 @@ while(<$fh>) { print $_; }
 # while: simplest infinite loop
 # 1 while 1;
 
+# while: postfix
+# print "hi" while 1;
