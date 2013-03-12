@@ -155,3 +155,10 @@ while(<$fh>) { print $_; }
 
 # while: postfix
 # print "hi" while 1;
+
+
+# do/until form
+my $status = 0;
+do {
+    say "changing status" && $status++;
+} until ($status == 100);
